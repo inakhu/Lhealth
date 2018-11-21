@@ -1,0 +1,39 @@
+<ion-view cache-view="false" view-title="Appointments">
+
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="PullRefresher()">
+    </ion-refresher>
+
+    <ion-list ng-if="totalItems>0" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+      <ion-item ng-repeat="row in appointments" class="item item-avatar"  href="#/app/appointments/{{row.app_id}}">
+        <img ng-src="app/assets/images/avatar.jpg">
+        <h2>Patient: {{row.patient}}</h2>
+        <p>Doctor: {{row.doctor}}</p>
+        <p>Date/Time: {{row.appointDate}}</p>
+        <p>
+          <a ng-if="row.rtime>0" class="button button-balanced button-small">{{(row.rtime)|htstogo}} to due</a>
+          <a ng-if="row.rtime<0" class="button button-assertive button-small">Expired</a>
+        </p>
+        <ion-option-button ng-if="myposition==1" class="button-assertive icon ion-trash-a" ng-click="deleteRecord(row.app_id)"></ion-option-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list ng-if="totalItems<0">
+      <p>No records found</p>
+    </ion-list>
+
+    <ion-infinite-scroll ng-if="moreDataCanBeLoaded" icon="ion-loading-c" on-infinite="HTSappLoader()" distance="1%">
+    </ion-infinite-scroll>
+
+  </ion-content>
+
+  <ion-floating-button ng-if="myposition!=3" ui-sref="app.appointmentsAdd" has-footer="false" button-color="#13add9" icon="ion-plus" icon-color="#fff">
+  </ion-floating-button>
+
+</ion-view>

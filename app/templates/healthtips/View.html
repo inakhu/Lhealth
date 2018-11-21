@@ -1,0 +1,34 @@
+<ion-view view-title="Baptist Church">
+  <ion-content class="padding">
+    <ion-list class="list list-inset">
+
+      <!--<div class="" ng-repeat="entry in entries | filter: {post_date: CurrentDate}">
+        <h2>{{entry.post_title}}</h2>
+        <p>{{entry.description}}</p> >>
+      </div>-->
+      <button ng-click="previous()" class="button ion-search button-calm">previous</button>
+      <span>{{CurrentDate|date:"EEEE dd, MMM"}}</span>
+      <button ng-click="next()" class="button  button-calm"> >> </button>
+
+      <div class="row col">
+        <h2>{{current.post_title}} - {{current.id+1}}</h2>
+        <p>{{current.description}}</p>
+      </div>
+
+      <div class="row">
+        <div class="col">Daily Encounetr</div>
+        <div class="col">Prayers</div>
+        <div class="col">Prayer Focus</div>
+      </div>
+
+      <div class="row">
+        <div class="col">Today's Encounetr</div>
+      </div>
+
+      <div class="row">
+        <div class="col">Today's Prayer</div>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

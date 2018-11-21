@@ -1,0 +1,92 @@
+
+<ion-view cache-view="false" view-title="Book Appointment" hide-back-button="false">
+    <form name="appointmentForm" >
+        <ion-content>
+            <div class="row">
+                <div class="col">
+                    <div class="list">
+                        <div class="item item-icon-left" ion-datetime-picker date ng-model="row.appDate" only-valid="{'after': 'today', 'inclusive': true}">
+                            <i class="icon ion-ios-calendar positive"></i>
+                            Select date:
+                            <strong>{{row.appDate| date: "yyyy-MM-dd"}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                        <a class="button ion-search button-calm" href="#/app/appointments/doc/available/{{row.appDate| date: 'yyyy-MM-dd'}}"> Go </a>
+                </div>
+            </div>
+
+            <ion-item ng-repeat="row in doctorsList" class="item item-avatar"  href="#/app/doctors/{{row.userid}}">
+                <img ng-src="app/assets/images/avatar.jpg">
+                <h2>{{row.name}}</h2>
+                <p>Email: ({{row.user_email}})</p>
+                <p>
+                    <a class="button button-balanced button-small" ng-click="openModal(row.userid)">Book Appointment</a>
+                </p>
+            </ion-item>
+        </ion-content>
+    </form>
+
+
+
+    <!--Modal-->
+    <script id="templates/bookNow.html" type="text/ng-template">
+        <ion-modal-view>
+            <form name="BookAppointment">
+
+                <ion-header-bar class="bar-calm fix-buttons">
+                    <a class="button" ng-click="closeModal()">Go Back</a>
+                    <h1 class="title">Book Appointment</h1>
+                </ion-header-bar>
+                <ion-content has-bouncing="true">
+
+                    <input type="hidden"  ng-model="row.patientId" name="patientId">
+                    <input type="hidden"  ng-model="row.doctorId" name="doctorId">
+                    <input type="hidden" ng-model="row.appDate" name="app_date">
+                    <input type="hidden" ng-model="row.app_time" name="app_time">
+
+                    <div class="item item-icon-left">
+                        <i class="icon ion-ios-calendar positive"></i>
+                        Date:
+                        <strong>{{row.appDate| date: "dd MMM yyyy"}}</strong>
+                    </div>
+
+                    <div class="item item-icon-left" ion-datetime-picker time am-pm ng-model="row.app_time">
+                        <i class="icon ion-ios-clock-outline positive"></i>
+                        Pick Time:
+                        <strong>{{row.app_time| date: "h:mm a"}}</strong>
+                    </div>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Clinic Location:</span>
+                        <button class="button button-block" modal-select="" ng-model="row.clinic_location" options="ClinicLocation" modal-title="Select Clinic Location">
+                            Select<div class="option">{{option}}</div>
+                            {{row.clinic_location}}
+                        </button>
+                        <input type="hidden"  ng-model="row.clinic_location" name="clinic_location">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Your location (Address):</span>
+                        <input type="text" ng-model="row.patient_location" name="patient_location">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Notes:</span>
+                        <input type="text" ng-model="row.app_details" name="app_details">
+                    </label>
+                </ion-content>
+                <ion-footer-bar class="bar bar-calm">
+                    <div class="button-bar">
+                        <a class="button icon-left ion-android-time" ng-click="SubmitAppointment()">Submit Appointment</a>
+                    </div>
+                </ion-footer-bar>
+            </form>
+        </ion-modal-view>
+    </script>
+
+</ion-view>
+
+
+

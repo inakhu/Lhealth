@@ -1,0 +1,111 @@
+<ion-view view-title="Profile">
+  <ion-content>
+
+    <div class="list card">
+
+      <div class=" text-center ui-gradient-deepblue padding">
+        <img class="avatar-account" ng-src="app/assets/images/avatar.jpg">
+      </div>
+
+      <h3 class="text-center calm">{{row.name}}</h3>
+
+      <div class="item item-body">
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Username:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.username}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Email:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.user_email}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Phone Number:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.phone}}</div>
+          </div>
+        </div>
+
+
+        <div class="row item">
+          <div class="col text-right hts-grey">Status:</div>
+          <div class="col">
+            <button ng-if="row.user_status == 1" class="button button-calm button-small ">Active</button>
+            <button ng-if="row.user_status != 1" class="button button-assertive button-small">Inactive</button>
+          </div>
+        </div>
+
+        <div class="row item">
+          <div class="col text-right hts-grey">Position:</div>
+          <div class="col">
+            <button ng-if="row.user_position == 1" class="button button-balanced button-small ">Supper Admin</button>
+            <button ng-if="row.user_position == 2" class="button button-balanced button-small ">Admin</button>
+            <button ng-if="row.user_position == 3" class="button button-balanced button-small">Doctor</button>
+            <button ng-if="row.user_position == 4" class="button button-balanced button-small">Patient</button>
+          </div>
+        </div>
+
+        <div class="row item">
+          <div class="col text-right hts-grey">Gender:</div>
+          <div class="col">{{row.gender}}</div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Specialty:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.specialty}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Work Days:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.work_days}}</div>
+          </div>
+        </div>
+
+
+        <div class="row item">
+          <div ng-if="availab==1" class="col text-center"><button class="button button-balanced button-small">YES, Available</button></div>
+          <div ng-if="availab==0" class="col text-center"><button class="button button-assertive button-small">NO</button></div>
+        </div>
+
+       <!-- <div class="row">
+          <div class="col text-right hts-grey ">Date Joined:</div>
+          <div class="col ">{{row.date_created|date:'dd MMM yyyy'}}</div>
+        </div>-->
+
+        <!--<button class="button button-assertive" ng-click="openPhotoLibrary()">
+          Upload image
+        </button>-->
+
+      </div>
+
+      <div ng-if="myposition==1" class="item tabs tabs-secondary tabs-icon-left">
+        <a ng-if="myposition==1" class="tab-item" ui-sref="app.UserAdd"> <i class="icon ion-plus"></i> Create </a>
+        <a ng-if="myposition==1" class="tab-item" href="#/app/profile/update/{{row.userid}}"> <i class="icon ion-edit"></i> Account Info </a>
+        <a ng-if="myposition==3 or myposition==1" class="tab-item" href="#/app/doctors/update/{{row.userid}}"> <i class="icon ion-edit"></i>Edit </a>
+        <a  class="tab-item" href="#/app/profile/upload/{{row.userid}}"> <i class="icon ion-images"></i> Picture</a>
+        <a ng-if="myposition==1" class="tab-item" ng-click="deleteRecord(row.userid)"> <i class="icon ion-trash-a"></i>Delete</a>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

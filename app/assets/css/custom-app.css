@@ -1,0 +1,98 @@
+.loginBg{
+    background: #1c2627 url(../images/bg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.header {
+    padding-bottom: 20px;
+}
+img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.app-logo{ max-width:100px; margin:auto; background-repeat:no-repeat;background-position:center;}
+.top-content { padding-top: 10vh;  text-align: center;   }
+.loginButton{ padding-bottom:0px;}
+.remvoeBP{ padding-bottom:0px;}
+.removePM{ margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; }
+
+#menuLinks .list .item{ border-color:#479CF7;}
+#menuLinks .list .item a{ background:#387EF5; color:#fff;}
+
+
+
+
+
+
+
+.custom {
+    background-color: #066488 !important;
+}
+.custom .item {
+    background-color: transparent;
+    border:none;
+    border-top: 1px solid;
+    border-bottom:1px solid;
+    border-color: #08729B;
+    color: white;
+}
+
+.custom .item:last-child {
+    border-bottom: 1px solid #08729B;
+}
+
+.custom .item-complex .item-content, .dark .item-radio .item-content {
+    background-color: transparent;
+}
+.custom h2,
+.custom h3,
+.custom p,
+.custom a {
+    color: white;
+}
+
+.header-bg{
+    background: #076187 url(../images/appbg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bar-balanced{
+    background-color:#08729B;
+    color: white;
+}
+/*round*/
+item-avatar i:first-child, .item-avatar .item-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    border-radius: 4px;
+}
+.errormsg{color: red}
+
+.avatar-account{
+    height:128px;
+    width:128px;
+    border-radius:100%;
+    border:solid white 4px;
+}
+.hts-grey{
+    color: #888888;
+}
+
+.item-avatar,
+.item-avatar .item-content,
+.item-avatar-left,
+.item-avatar-left .item-content {
+    min-height: 0;
+}
+

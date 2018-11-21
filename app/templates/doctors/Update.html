@@ -1,0 +1,93 @@
+
+    <ion-view view-title="Update" hide-back-button="false">
+        <form name="accountForm" >
+            <input type="hidden"  ng-model="row.userid" name="userid">
+            <ion-content>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="row.name" name="name">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Employment ID</span>
+                    <input type="text" ng-model="row.employment_no" name="employment_no">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Gender</span>
+                    <button ng-if="row.gender!=''" class="button button-block" modal-select="" ng-model="row.gender" options="genderSelect" modal-title="Select Gender">
+                        <div class="option">{{option}}</div>
+                        {{row.gender}}
+                    </button>
+                    <button ng-if="row.gender==''" class="button button-block" modal-select="" ng-model="row.gender" options="genderSelect" modal-title="Select Gender">
+                        Select <div class="option">{{option}}</div>
+                    </button>
+                    <input type="hidden"  ng-model="row.gender" name="gender">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Specialty</span>
+                    <input type="text" ng-model="row.specialty" name="specialty">
+                </label>
+
+             <!--   <label class="item item-input">
+                    <span class="input-label">Availability</span>
+                    <button ng-if="row.available!=''" class="button button-block" modal-select="" ng-model="row.available" options="availSelect" modal-title="Select Avaailability">
+                        <div class="option">{{option}}</div>
+                        {{row.available}}
+                    </button>
+                    <button ng-if="row.available==''" class="button button-block" modal-select="" ng-model="row.available" options="availSelect" modal-title="Select Avaailability">
+                        Select<div class="option">{{option}}</div>
+                    </button>
+                    <input type="hidden"  ng-model="row.available" name="available">
+                </label>-->
+
+
+                <label class="item item-input ">
+                    <span class="input-label">Work Days</span>
+                    <button ng-if="row.work_days!=''" class="button button-block" ng-click="openModal()">
+                        {{row.work_days}}
+                    </button>
+                    <button ng-if="row.work_days==''" class="button button-block" ng-click="openModal()">
+                        Select
+                    </button>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Others</span>
+                    <input type="text" ng-model="row.others" name="others">
+                </label>
+
+            </ion-content>
+
+            <ion-footer-bar class="bar bar-calm">
+                <button  class="button button-light ion-reply" ui-sref="app.doctors"> Cancel</button>
+                <button  class="button button-positive ion-person" ng-click="HTSupdateDoctor()"> Save changes</button>
+            </ion-footer-bar>
+        </form>
+
+        <!--Modal-->
+        <script id="templates/workDays.html" type="text/ng-template">
+            <ion-modal-view>
+                <form name="WorkDaysForm">
+                    <ion-header-bar class="bar-calm fix-buttons">
+                        <a class="button" ng-click="closeModal()">Go Back</a>
+                        <h1 class="title">Select Work Days</h1>
+                    </ion-header-bar>
+                    <ion-content has-bouncing="true">
+                        <input type="hidden"  ng-model="row.userid" name="userid">
+                            <ion-checkbox ng-repeat="item in WorkDays" ng-model="checkItems[item.wdays]" ng-change="printChecks()" ng-checked>
+                                {{ item.wdays }}
+                            </ion-checkbox>
+                    </ion-content>
+                    <ion-footer-bar class="bar bar-calm">
+                        <button  class="button button-positive ion-person" ng-click="saveChecks()"> Save Days</button>
+                    </ion-footer-bar>
+                </form>
+            </ion-modal-view>
+        </script>
+
+    </ion-view>
+
+
+
