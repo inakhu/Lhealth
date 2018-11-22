@@ -174,7 +174,7 @@ angular.module('HezecomApp',[
                 views: {
                     'menuContent': {
                         templateUrl: 'app/templates/main/verify.html',
-                        controller: 'MainCtrl'
+                        //controller: 'MainCtrl'
                     }
                 },
                 authStatus: true
@@ -184,7 +184,7 @@ angular.module('HezecomApp',[
                 views: {
                     'menuContent': {
                         templateUrl: 'app/templates/main/create.html',
-                        controller: 'MainCtrl'
+                        //controller: 'MainCtrl'
                     }
                 },
                 authStatus: true
