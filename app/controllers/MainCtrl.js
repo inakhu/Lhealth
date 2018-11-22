@@ -18,13 +18,13 @@ app.controller('MainCtrl', function($scope,$state, $http,$ionicPopup,$ionicSlide
     };
 
     $scope.HTSappLoader = function() {
-        $ionicLoading.show({template: 'Loading...'});
+        //$ionicLoading.show({template: 'Loading...'});
         HTSServices.HezecomGetOne('questions').success(function (data) {
             $scope.questions = data.questions;
             $scope.options = data.options;
             $scope.totalItems = data.counter;
 
-            $ionicLoading.hide();
+            //$ionicLoading.hide();
         });
 
     };
