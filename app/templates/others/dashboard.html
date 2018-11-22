@@ -1,0 +1,41 @@
+<ion-view cache-view="false" view-title="Dashboard" name="dashboard-view" hide-back-button="true">
+	<ion-nav-buttons side="right">
+		<a class="button button-icon icon ion-log-out" ng-click="doLogout()"></a>
+	</ion-nav-buttons>
+
+	<ion-pane  style="background-color: #1A84B0">
+		<ion-content scroll="true">
+			<section>
+				<div class="row">
+					<!--<div class="col text-center">
+						<p style="font-size:56px"><img src="app/assets/images/logo.png" alt="Hezecom Healthe"/></p>
+						<p></p>
+					</div>-->
+					<div class="col text-center ui-gradient-deepblue padding">
+						<img class="avatar-account" ng-src="app/assets/images/logo2.jpg">
+						<h5><b style="color: white">Lagos State Health Management Agency</b></h5>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col text-center card calm-bg">
+						<a ui-sref="app.verify" class="item calm-bg">
+							<p style="font-size:56px"><i class="icon ion-ios-book light"></i></p>
+							<p><span class="light">START ASSESSMENT</span></p>
+						</a>
+					</div>
+				</div>
+				<!--<div class="row">
+					<div class="col text-center card calm-bg">
+						<a ui-sref="app.appointments" class="item calm-bg">
+							<p style="font-size:56px"><i class="icon ion-ios-book light"></i></p>
+							<p><span class="light">VIEW ACCREDITATION RESULT</span></p>
+						</a>
+					</div>
+				</div>-->
+
+				</div>
+			</section>
+		</ion-content>
+	</ion-pane>
+</ion-view>

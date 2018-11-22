@@ -1,0 +1,77 @@
+<ion-view view-title="Settings">
+    <form name="HTSsettings">
+        <ion-content>
+            <ul class="list">
+                <input type="hidden"  name="host" ng-model="data.host"/>
+                <input type="hidden"  name="dbusername" ng-model="data.dbusername"/>
+                <input type="hidden"  name="dbpassword" ng-model="data.dbpassword"/>
+                <input type="hidden"  name="dbname" ng-model="data.dbname"/>
+                <input type="hidden"  name="dbtype" ng-model="data.dbtype"/>
+                <input type="hidden"  name="recordsp" ng-model="data.recordsp"/>
+                <input type="hidden"  name="myposition" ng-model="data.myposition"/>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">App Title</span>
+                    <input type="text" name="ptitle" ng-model="data.ptitle" value="{{ptitle}}">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">App Email</span>
+                    <input type="text" name="app_email" ng-model="data.app_email" value="{{app_email}}">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">No Reply Email</span>
+                    <input type="text" name="no_reply" ng-model="data.no_reply">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">App Website</span>
+                    <input type="text" name="app_website" ng-model="data.app_website">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Time Zone</span>
+                    <input type="text" name="app_timezone" ng-model="data.app_timezone" readonly>
+                </label>
+
+                <!--<label class="item item-input item-stacked-label">
+                    <span class="input-label">Time Zones</span>
+                    <button class="button button-block" modal-select="" ng-model="data.tzones" options="tzones" modal-title="Select Zones">
+                        Select Position:
+                        <div class="option">{{option}}</div>
+                        <span >{{data.tzones}}</span>
+                    </button>
+                    <input type="hidden"  ng-model="data.tzones" name="tzones">
+                </label>-->
+
+                <!--<ion-toggle ng-model="pushNotification.checked" ng-change="pushNotificationChange()">
+                    Push Notifications
+                </ion-toggle>
+
+                <div class="item">
+                    <pre ng-bind="pushNotification | json"></pre>
+                </div>-->
+
+                <ion-toggle toggle-class="toggle-balanced" ng-model="data.app_enotify" ng-true-value="'On'" ng-false-value="'Off'">
+                    Email Notification
+                </ion-toggle>
+                <input type="hidden" name="app_enotify" ng-model="data.app_enotify">
+
+                <ion-toggle toggle-class="toggle-balanced" ng-model="data.user_sign" ng-true-value="'On'" ng-false-value="'Off'">
+                    Users can Signup
+                </ion-toggle>
+                <input type="hidden" name="user_sign" ng-model="data.user_sign">
+
+                <ion-toggle toggle-class="toggle-balanced" ng-model="data.doctor_sign" ng-true-value="'On'" ng-false-value="'Off'">
+                    Doctors can Signup (Admin only)
+                </ion-toggle>
+                <input type="hidden" name="doctor_sign" ng-model="data.doctor_sign">
+            </ul>
+        </ion-content>
+
+        <ion-footer-bar class="bar bar-calm">
+            <button  class="button button-positive ion-settings" ng-click="HTSLSettingsUpdate()"> Save changes</button>
+        </ion-footer-bar>
+    </form>
+</ion-view>

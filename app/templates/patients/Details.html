@@ -1,0 +1,145 @@
+<ion-view view-title="Profile" cache-view="false">
+  <ion-content>
+
+    <div class="list card">
+
+      <div class=" text-center ui-gradient-deepblue padding">
+        <img class="avatar-account" ng-src="app/assets/images/avatar.jpg">
+      </div>
+
+      <h3 class="text-center calm">{{row.name}}</h3>
+
+      <div class="item item-body">
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Username:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.username}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Email:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.user_email}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Phone Number:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.phone}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Hopital/Clinic No:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.clinic_no}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Matric Number:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.matric}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Date of Birth:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.date_of_birth|date:'dd MMM yyyy'}}</div>
+          </div>
+        </div>
+
+        <div class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Contact Address:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.address}}</div>
+          </div>
+        </div>
+
+        <div ng-if="row.campus_location" class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Campus Location:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.campus_location}}</div>
+          </div>
+        </div>
+
+        <div ng-if="row.program_study" class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Programme of Study:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.program_study}}</div>
+          </div>
+        </div>
+
+        <div ng-if="row.faculty" class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Faculty:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.faculty}}</div>
+          </div>
+        </div>
+
+        <div ng-if="row.department" class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Department / Course:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.department}} / {{row.course}}</div>
+          </div>
+        </div>
+
+        <div ng-if="row.others" class="item" style="padding:0;">
+          <div class="row">
+            <div class="col text-center hts-grey">Other:</div>
+          </div>
+          <div class="row">
+            <div class="col text-center">{{row.others}}</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--<div class="item tabs tabs-secondary tabs-icon-left">
+        <a ng-if="myposition==1" class="tab-item" ui-sref="app.UserAdd"> <i class="icon ion-plus"></i> Create </a>
+        <a ng-if="myposition==1" class="tab-item" href="#/app/profile/update/{{row.userid}}"> <i class="icon ion-edit"></i> Edit SignIn </a>
+        <a class="tab-item" href="#/app/patients/update/{{row.userid}}"> <i class="icon ion-edit"></i>Edit Info </a>
+        <a class="tab-item" href="#/app/profile/upload/{{row.userid}}"> <i class="icon ion-images"></i> Picture</a>
+        <a ng-if="myposition==1" class="tab-item" ng-click="deleteRecord(row.userid)"> <i class="icon ion-trash-a"></i>Delete</a>
+      </div>-->
+
+    </div>
+  </ion-content>
+
+  <div class="tabs-striped  tabs-background-stable tabs-color-dark">
+    <div class="tabs tabs-icon-top ">
+      <a ng-if="myposition==1" class="tab-item" ui-sref="app.UserAdd"> <i class="icon ion-plus"></i> Create </a>
+      <a ng-if="myposition==1" class="tab-item" href="#/app/profile/update/{{row.userid}}"> <i class="icon ion-edit"></i> Edit login </a>
+      <a ng-if="myposition==4 or myposition==1" class="tab-item" href="#/app/patients/update/{{row.userid}}"> <i class="icon ion-edit"></i>Edit Info </a>
+      <a ng-if="myposition==4 or myposition==1" class="tab-item" href="#/app/profile/upload/{{row.userid}}"> <i class="icon ion-images"></i> Picture</a>
+      <a ng-if="myposition==1" class="tab-item" ng-click="deleteRecord(row.userid)"> <i class="icon ion-trash-a"></i>Delete</a>
+    </div>
+  </div>
+
+</ion-view>

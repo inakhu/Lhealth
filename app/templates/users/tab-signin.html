@@ -1,0 +1,43 @@
+<div ng-controller="userLoginCtrl">
+	<form name="signinForm">
+		<!--<div class="tabs-striped  tabs-background-positive tabs-color-light">
+			<div class="tabs tabs-icon-top">
+				<a class="tab-item active" href="#/login"><i class="icon ion-unlocked"></i> Login</a>
+				<a class="tab-item" href="#/signup"> <i class="icon ion-person"></i> Sing Up </a>
+			</div>
+		</div>-->
+
+		<ion-view view-title="Sign In" class="loginBg" hide-nav-bar="true" >
+
+			<ion-content class="padding">
+
+				<div class="row responsive-sm">
+					<div class="col">
+
+						<div class=" text-center ui-gradient-deepblue padding">
+							<img class="avatar-account" ng-src="app/assets/images/logo2.jpg">
+							<h5><b>Lagos State Health Management Agency</b></h5>
+						</div>
+						<h5 class="text-center light">Sign In</h5>
+						<div class="list list-inset removePM">
+							<label class="item item-input"><input type="text" ng-model="data.email" placeholder="Username" required> </label>
+							<label class="item item-input"><input type="password" ng-model="data.password" placeholder="Password" > </label>
+						</div>
+
+						<div class="loginButton"><button class="button ion-unlocked button-block button-calm" ng-click="HTSLoginForm()"> Login </button>  </div>
+					</div>
+				</div>
+
+				<div class="row padding removePM">
+					<div class="col">
+						<button class="button button-small button-border button-light" ui-sref="UserLost">
+							Forgot password?
+						</button>
+					</div>
+
+				</div>
+
+			</ion-content>
+		</ion-view>
+	</form>
+</div>

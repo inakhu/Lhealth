@@ -1,0 +1,57 @@
+<div ng-controller="UeserDetails">
+    <ion-view view-title="Update Profile" hide-back-button="false">
+        <form name="accountForm" >
+            <input type="hidden"  ng-model="row.userid" name="userid">
+            <ion-content>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="row.name" name="name">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Phone Number</span>
+                    <input type="text" ng-model="row.phone" name="phone">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="text" ng-model="row.user_email" name="user_email" readonly>
+                </label>
+
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">User Status</span>
+                    <button class="button" modal-select="" ng-model="row.user_status" options="userStatus" modal-title="User Status">
+                        Change
+                        <div class="option">{{option}}</div>
+                        <span ng-if="row.user_status">{{row.user_status}}</span>
+                    </button>
+                    <input type="hidden"  ng-model="row.user_status" name="user_status">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">User Position</span>
+                    <button class="button" modal-select="" ng-model="row.user_position" options="userPosition" modal-title="User Position">
+                        Change
+                        <div class="option">{{option}}</div>
+                        <span ng-if="row.user_position">{{row.user_position}}</span>
+                    </button>
+                    <input type="hidden"  ng-model="row.user_position" name="user_position">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Change Password</span>
+                    <input type="password" ng-model="row.pwd" name="pwd" placeholder="leave blank only if you want to change password">
+                </label>
+
+
+
+            </ion-content>
+
+            <ion-footer-bar class="bar bar-calm">
+                <button  class="button button-light ion-reply " ui-sref="app.profiles"> Cancel</button>
+                <button  class="button button-positive ion-person" ng-click="HTSupdateForm()"> Save changes</button>
+            </ion-footer-bar>
+        </form>
+    </ion-view>
+</div>

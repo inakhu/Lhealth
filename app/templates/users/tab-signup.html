@@ -1,0 +1,76 @@
+<form ng-submit="HTSsignupForm()">
+	<div class="tabs-striped  tabs-background-positive tabs-color-light">
+		<div class="tabs tabs-icon-top">
+			<a class="tab-item " href="#/login"><i class="icon ion-unlocked"></i> Login </a>
+			<a class="tab-item active" href="#/signup"> <i class="icon ion-person"></i> Sing Up </a>
+		</div>
+	</div>
+
+	<ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
+		<ion-content class="padding">
+			<!--<div ng-if="user_sign=='On'">-->
+				<div class="row responsive-sm">
+					<div class="col">
+
+						<div class=" text-center ui-gradient-deepblue padding">
+							<img class="avatar-account" ng-src="app/assets/images/logo2.jpg">
+						</div>
+						<h5 class="text-center light">Sign Up</h5>
+						<div class="list list-inset removePM">
+
+							<input type="hidden" ng-model="data.user_position" name="user_position">
+
+							<label class="item item-input">
+								<input type="text" ng-model="data.name" name="name" placeholder="Full Name">
+							</label>
+
+							<label class="item item-input">
+								<input type="text" ng-model="data.matric" placeholder="Matric Number">
+							</label>
+
+							<label class="item item-input">
+								<input type="email" ng-model="data.email" name="email" placeholder="Email Address" ng-minlength="5">
+								<p class="errormsg">{{emailexist}}</p>
+							</label>
+
+							<label class="item item-input">
+								<input type="text" ng-model="data.phone" name="phone" placeholder="Phone Number">
+							</label>
+
+							<label class="item item-input">
+								<input type="text" ng-model="data.username" name="username" placeholder="Username" ng-minlength="5">
+								<p class="errormsg">{{userexist}} {{vcheck}}</p>
+							</label>
+
+							<label class="item item-input">
+								<input type="password" ng-model="data.password" name="password" placeholder="Password">
+							</label>
+
+							<label class="item item-input">
+								<input type="password" ng-model="data.password2" name="password2" placeholder="Confirm Password">
+								<p class="errormsg">{{errorPwd}} {{errorShort}}</p>
+							</label>
+
+						</div>
+
+						<div class="loginButton"><button class="button ion-person button-block button-calm"> Register </button>  </div>
+					</div>
+				</div>
+
+				<div class = "padding-vertical"></div>
+				<!--<div class="row  paddin  g removePM">
+                  <div class="col"> <a class=" button-positive button button-block" ng-click="facebookSignIn()"><i class="icon ion-social-facebook"></i></a> </div>
+                  <div class="col"> <a class="button-calm button button-block" ng-click="twitterSignIn()"><i class="icon ion-social-twitter"></i></a> </div>
+                </div>-->
+			<!--</div>-->
+			<!--<div ng-if="user_sign!='On'">
+				<div class="row responsive-sm">
+					<div class="col padding">
+						<h3 class="text-center">Patients are not allowed to register at this time. Please try again later</h3>
+						<h4 class="text-center">Contact Admin for details on {{app_email}}</h4>
+					</div>
+				</div>
+			</div>-->
+		</ion-content>
+	</ion-view>
+</form>

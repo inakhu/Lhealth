@@ -1,0 +1,107 @@
+<div ng-controller="userSignupCtrl">
+    <form name="HTSSignup">
+
+        <!--<ion-view view-title="Accreditation">
+            <ion-content class="padding">
+
+                <div class="row responsive-sm padding remvoeBP">
+                    <div class="col">
+
+                        <ion-list>
+                            <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'B'">Choose C</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'B'">Choose D</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'B'">Choose E</ion-radio>
+                        </ion-list>
+
+                        <div class="loginButton"><button class="button ion-person button-block button-calm" ng-click="HTSsignupFormAdmin()"> Create Account </button>  </div>
+                    </div>
+                </div>
+
+            </ion-content>
+        </ion-view>-->
+        <ion-view view-title="Assessment" hide-back-button="false">
+            <!--<ion-nav-buttons side="left">
+                <button class="button button-positive button-clear no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+                    Previous Slide
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-positive button-clear no-animation" ng-click="next()" ng-show="slideIndex != 2">
+                    Next
+                </button>
+                <button class="button button-positive button-clear no-animation" ng-click="startApp()" ng-show="slideIndex == 2">
+                    Start using MyApp
+                </button>
+            </ion-nav-buttons>-->
+
+            <ion-content>
+                <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="">
+                    <ion-slide>
+                        <div class="padding">
+                            <h3>QUESTION 1</h3>
+                            <h4>How many staff do you have?</h4>
+                        </div>
+                        <ion-list>
+                            <ion-radio ng-model="choice" ng-value="'A'" name="group1">50 and Above</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'B'" name="group1">Between 20 to 50</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'C'" name="group1">Between 10 to 20</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'D'" name="group1">Less than 10</ion-radio>
+                            <ion-radio ng-model="choice" ng-value="'E'" name="group1">None of the Above</ion-radio>
+                        </ion-list>
+
+                    </ion-slide>
+
+                    <ion-slide>
+                        <div class="padding">
+                            <h3>QUESTION 2</h3>
+                            <h4>Using Awesome</h4>
+                        </div>
+                        <ion-list>
+                            <ion-radio ng-model="choice2" ng-value="'A'" name="group12">Choose A</ion-radio>
+                            <ion-radio ng-model="choice2" ng-value="'B'" name="group12">Choose B</ion-radio>
+                            <ion-radio ng-model="choice2" ng-value="'C'" name="group12">Choose C</ion-radio>
+                            <ion-radio ng-model="choice2" ng-value="'D'" name="group12">Choose D</ion-radio>
+                            <ion-radio ng-model="choice2" ng-value="'E'" name="group12">Choose E</ion-radio>
+                        </ion-list>
+                    </ion-slide>
+
+                    <ion-slide>
+                        <div class="padding">
+                            <h3>QUESTION 3</h3>
+                            <h4>Any questions?</h4>
+                        </div>
+                        <ion-list>
+                            <ion-radio ng-model="choice3" ng-value="'A'" name="group13">Choose A</ion-radio>
+                            <ion-radio ng-model="choice3" ng-value="'B'" name="group13">Choose B</ion-radio>
+                            <ion-radio ng-model="choice3" ng-value="'C'" name="group13">Choose C</ion-radio>
+                            <ion-radio ng-model="choice3" ng-value="'D'" name="group13">Choose D</ion-radio>
+                            <ion-radio ng-model="choice3" ng-value="'E'" name="group13">Choose E</ion-radio>
+                        </ion-list>
+                    </ion-slide>
+
+                    <ion-slide>
+                        <div class="col padding">
+                            <h4>You can always go back to confirm your selections if you are done</h4>
+                            <label class="item item-input">
+                                <textarea placeholder="Do have  Comment?" style="height: 100px;"></textarea>
+                            </label>
+                            <div class="loginButton">
+                                <button class="button ion-person button-block button-calm" ng-click="SubmitForm()"> Submit </button>
+                            </div>
+                        </div>
+
+                    </ion-slide>
+
+                </ion-slide-box>
+            </ion-content>
+            <ion-footer-bar class="bar bar-positive">
+                <div class="button-bar">
+                    <button class="button icon-left" ng-click="previous()" ng-show="slideIndex > 0">Prev</button>
+                    <button class="button icon-left " ng-click="next()" ng-show="slideIndex != 3">Next</button>
+                </div>
+            </ion-footer-bar>
+        </ion-view>
+    </form>
+</div>

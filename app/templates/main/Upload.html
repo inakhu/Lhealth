@@ -1,0 +1,18 @@
+
+<ion-view cache-view="true" view-title="Assessment" name="access-view" hide-back-button="true">
+    <ion-pane  style="background-color: #FFFFFF">
+        <ion-content>
+            <div class="col padding text-center">
+            <h4 class="">Your assessment was submitted successfully. In case you have any image you want to attach to you assessment, you can do that here. Otherwise close the session. Thank you</h4>
+                <p><a class="button button-calm" ui-sref="app.dashboard">close</a></p>
+                <img ng-src="{{pathForImage(image)}}" style="width: 70%; height: 50%;">
+            </div>
+        </ion-content>
+        <ion-footer-bar class="bar bar-positive">
+            <div class="button-bar">
+                <button class="button icon-left ion-camera" ng-click="loadImage()">Take Photo</button>
+                <button class="button icon-left ion-upload" ng-click="uploadImage()" ng-disabled="image === null">Upload</button>
+            </div>
+        </ion-footer-bar>
+    </ion-pane>
+</ion-view>

@@ -1,0 +1,111 @@
+<div ng-controller="PatientDetails">
+    <ion-view view-title="Update" hide-back-button="false">
+        <form name="accountForm" >
+            <input type="hidden"  ng-model="row.userid" name="userid">
+            <ion-content>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="row.name" name="name">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Matric Number</span>
+                    <input type="text" ng-model="row.matric" name="matric">
+                </label>
+
+                <label class="item item-input ">
+                    <span class="input-label">Clinic Number</span>
+                    <input type="text" ng-model="row.clinic_no" name="clinic_no">
+                </label>
+
+                <label class="item item-input ">
+                    <span class="input-label">Date of Birth</span>
+                    <button ng-if="row.date_of_birth!=''" class="button button-block" ion-datetime-picker date ng-model="row.date_of_birth">
+                        {{row.date_of_birth| date: "dd MMM yyyy"}}
+                    </button>
+                    <button ng-if="row.date_of_birth==''" class="button button-block" ion-datetime-picker ng-model="row.date_of_birth">
+                        Select a date: {{row.date_of_birth| date: "dd MMM yyyy"}}
+                    </button>
+                    <input type="hidden" ng-model="row.date_of_birth" name="date_of_bith">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Home Address</span>
+                    <input type="text" ng-model="row.address" name="address">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Year of Entry</span>
+                    <input type="text" ng-model="row.year_of_entry" name="year_of_entry">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Programme of Study</span>
+                    <button ng-if="row.program_study!=''" class="button button-block" modal-select="" ng-model="row.program_study" options="programmez" modal-title="Select a program of study">
+                        <div class="option">{{option}}</div>
+                        {{row.program_study}}
+                    </button>
+                    <button ng-if="row.program_study==''" class="button button-block" modal-select="" ng-model="row.program_study" options="programmez" modal-title="Select a program of study">
+                        Select:
+                        <div class="option">{{option}}</div>
+                        {{row.program_study}}
+                    </button>
+                    <input type="hidden"  ng-model="row.program_study" name="program_study">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Faculty</span>
+                    <input type="text" ng-model="row.faculty" name="faculty">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Department</span>
+                    <input type="text" ng-model="row.department" name="department">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Course of Study</span>
+                    <input type="text" ng-model="row.course" name="course">
+                </label>
+
+               <!-- <label class="item item-input item-stacked-label">
+                    <span class="input-label">User Status</span>
+                    <button class="button" modal-select="" ng-model="row.user_status" options="userStatus" modal-title="User Status">
+                        Change
+                        <div class="option">{{option}}</div>
+                        <span ng-if="row.user_status">{{row.user_status}}</span>
+                    </button>
+                    <input type="hidden"  ng-model="row.user_status" name="user_status">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">User Position</span>
+                    <button class="button" modal-select="" ng-model="row.user_position" options="userPosition" modal-title="User Position">
+                        Change
+                        <div class="option">{{option}}</div>
+                        <span ng-if="row.user_position">{{row.user_position}}</span>
+                    </button>
+                    <input type="hidden"  ng-model="row.user_position" name="user_position">
+                </label>-->
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Others</span>
+                    <input type="text" ng-model="row.others" name="others">
+                </label>
+
+                <!--<button class="button button-block" ion-datetime-picker ng-model="datetimeValue">
+                    Select a date {{datetimeValue| date: "yyyy-MM-dd H:mm:ss"}}
+                </button>-->
+
+                <!--  errors here -->
+                <div class="item assertive item-text-wrap text-center" ng-if="accountForm.$invalid">
+                    Please fill in all info
+                </div>
+
+            </ion-content>
+
+            <ion-footer-bar class="bar bar-calm">
+                <button  class="button button-light ion-reply "> Cancel</button>
+                <button  class="button button-positive ion-person" ng-click="HTSupdateForm()"> Save changes</button>
+            </ion-footer-bar>
+        </form>
+    </ion-view>
+</div>

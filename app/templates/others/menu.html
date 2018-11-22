@@ -1,0 +1,58 @@
+<ion-side-menus expose-aside-when="large">
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content class="custom">
+      <ion-list>
+        <ion-item class="heading-item item item-avatar header-bg" nav-clear menu-close ui-sref="app.profile">
+          <div class="user-image-container item-avatar">
+            <img class="user-image" ng-src="app/assets/images/avatar.jpg" spinner-on-load>
+          </div>
+
+          <h2 class="greeting">Hi {{myname}}</h2>
+          <p class="message">Welcome back</p>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.dashboard">
+          <i class="icon ion-ios-world"></i>
+          <h2 class="menu-text">Dashboard</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close href="#/app/profile/{{myuserid}}">
+          <i class="icon ion-person"></i>
+          <h2 class="menu-text">Profile</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.verify">
+          <i class="icon ion-medkit"></i>
+          <h2 class="menu-text">Start Accreditaion</h2>
+        </ion-item>
+        <ion-item ng-if="myposition==1" class="item-icon-left" nav-clear menu-close ui-sref="app.patients">
+          <i class="icon ion-person"></i>
+          <h2 class="menu-text">Accreditations</h2>
+        </ion-item>
+        <!--<ion-item ng-if="myposition==1" class="item-icon-left" nav-clear menu-close ui-sref="app.settings">
+          <i class="icon ion-gear-a"></i>
+          <h2 class="menu-text">Settings</h2>
+        </ion-item>-->
+        <ion-item class="item-icon-left" nav-clear menu-close ng-click="doLogout()">
+          <i class="icon ion-log-out"></i>
+          <h2 class="menu-text">Logout</h2>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>

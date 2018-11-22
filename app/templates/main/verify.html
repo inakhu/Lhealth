@@ -1,0 +1,25 @@
+<ion-view view-title="Verify" hide-back-button="false">
+    <ion-content class="padding">
+
+        <div class="row responsive-sm padding remvoeBP">
+            <div class="col">
+
+                <div class="col padding">
+                    <label class="item item-input">
+                        <input type="text" ng-model="data.username" name="username" placeholder="Enter Hopital Code">
+                    </label>
+                    <h4 class="center">Or</h4>
+                    <div class="">
+                        <a class="button button-block button-assertive" ng-click="loadImage()"> Scan Bar Code </a>
+                    </div>
+                    <div class="loginButton">
+                        <!--button class="button button-block button-calm" ng-click="HTSsignupFormAdmin()"> Continue </button>-->
+                        <a class="button button-block button-calm" ui-sref="app.vsuccess"> Continue </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
